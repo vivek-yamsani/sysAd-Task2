@@ -1,0 +1,28 @@
+version: '3.1'
+services: 
+    database:
+        image: mysql
+        restart: always
+        environment: 
+            MYSQL_ROOT_PASSWORD: passworddelta
+        volumes: 
+            - data:/var/lib/mysql
+        ports: 
+            - "3306:3306"
+    phpmyadmin:
+        image: phpmyadmin
+        restart: always
+        links: 
+            - database
+        environment: 
+            PMA_HOST: database
+            PMA_PASSWORD: Secret
+        ports: 
+            - "8080:80" 
+    server:
+        build: 
+            context: .
+            dockerfile: ./Dockerfile
+        restart: always
+volumes: 
+    data:
