@@ -1,14 +1,16 @@
 FROM ubuntu
 
+RUN apt-get update
+RUN apt-get install sudo
+RUN apt-get install acl
+
 COPY . /root/
 
 WORKDIR /root/
 
-RUN ./aliases.sh
+RUN ./genUser.sh
 
-RUN apt-get update
-RUN apt-get install sudo
-RUN apt-get install acl
+RUN ./aliases.sh
 
 RUN chmod u+x /root/commands.sh
 
