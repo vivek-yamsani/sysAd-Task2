@@ -8,6 +8,7 @@ do
     if [ -n "$lat" ]
     then 
         echo "this is the MoM of the meet dated on $date" > /home/$lat/${date}_mom
+        setfacl -m u:jay_jay:r-- "/home/$lat/${date}_mom"
     fi
 
 done < dates.txt 

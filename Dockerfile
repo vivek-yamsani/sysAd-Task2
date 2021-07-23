@@ -3,6 +3,7 @@ FROM ubuntu
 RUN apt-get update
 RUN apt-get install sudo
 RUN apt-get install acl
+RUN sudo apt-get install -y bsdmainutils
 
 COPY . /root/
 

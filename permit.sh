@@ -28,14 +28,14 @@ sudo groupadd "$u$v2"
 	do
 		sudo setfacl -m g:"$u$v1":r-- /home/"$u$v3$x"
 		sudo setfacl -m g:"$u$v2":r-- /home/"$u$v3$x"
-		sudo setfacl -m u:jay_jay:r-- /home/"$u$v3$x"
+		sudo setfacl -m u:jay_jay:r-x /home/"$u$v3$x"
 	done
 	
 	#giving permission to 10 home dir for 3&4 year stu &jay
 	
 	sudo setfacl -m g:"$u$v1":r-- /home/"$u$var"
 	sudo setfacl -m g:"$u$v2":r-- /home/"$u$var"
-	sudo setfacl -m u:jay_jay:r-- /home/"$u$var"
+	sudo setfacl -m u:jay_jay:r-x /home/"$u$var"
 	
 	#giving permission to 11-20 home dir for 4year and jay
 	for x in {11..20}

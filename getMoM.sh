@@ -1,6 +1,5 @@
 #!/bin/bash
 #for column command
-sudo apt-get install bsdmainutils
 fir=$1
 se=$2
 if [ -z "$se" ]
